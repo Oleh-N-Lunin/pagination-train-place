@@ -1,4 +1,4 @@
-const listItems = [
+const items = [
     "Item 1",
     "Item 2",
     "Item 3",
@@ -81,5 +81,23 @@ function PaginationButton(page, items) {
 }
 
 
-DisplayList(listItems, listElement, rows, currentPage);
-SetupPagination(listItems, paginationElement, rows)
+// DisplayList(listItems, listElement, rows, currentPage);
+// SetupPagination(listItems, paginationElement, rows)
+
+$('#list').pagination({
+    dataSource: items,
+    callback: function(data, pagination) {
+        var html = template(items);
+        $('#data-container').html(html);
+    }
+})
+
+function template(data) {
+      var html = '<ul>';
+        $.each(data, function(index, item) {
+          html += '<li>'+ item +'</li>';
+        });
+     
+      html += '</ul>';
+      return html;
+    }
