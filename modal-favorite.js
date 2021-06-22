@@ -3,6 +3,7 @@ const closeFavModalMtn = document.querySelector('button[data-action="close-modal
 const backDropRef = document.querySelector('.js-backdrop');
 const favList = document.querySelector('.fav-events-list');
 const eventsListRef = document.querySelector('.js-list');
+const paginationContainer = document.querySelector('.pagination');
 
 openFavModalBtn.addEventListener('click', showModalHendler);
 closeFavModalMtn.addEventListener('click', removeModalHendler);
